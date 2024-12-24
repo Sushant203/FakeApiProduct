@@ -1,9 +1,10 @@
+import GetAllProducts from "./components/products/GetAllProducts"
 
 function App() {
   
   return (
     <>
-     <p className="text-red-300">hello</p>
+     <GetAllProducts/>
     </>
   )
 }
