@@ -41,7 +41,7 @@ const ProductDetails = () => {
         </figure>
       )}
       <p>{product.description}</p>
-      <p className="text-xl font-semibold">${product.price}</p>
+      <p className="text-xl font-semibold text-price_color">${product.price}</p>
       <p className="text-sm">Category: {product.category}</p>
       <p className="text-sm">Rating: {product.rating}</p>
     </section>
