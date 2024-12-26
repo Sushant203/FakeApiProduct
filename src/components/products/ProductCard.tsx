@@ -5,6 +5,7 @@ import { IProduct } from "../../types/product";
 const ProductList = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [error, setError] = useState(false);
   const productsPerPage = 8;
 
   const fetchProducts = async () => {
@@ -14,7 +15,8 @@ const ProductList = () => {
       setProducts(data.products);
       console.log(data.products); // For debugging
     } catch (error) {
-      console.error("Failed to load the data", error);
+      setError(true);
+      // console.error("Failed to load the data", error);
     }
   };
 

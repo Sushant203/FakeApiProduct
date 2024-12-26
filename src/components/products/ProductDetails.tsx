@@ -5,6 +5,7 @@ import { IProduct } from "../../types/product";
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>(); 
   const [product, setProduct] = useState<IProduct | null>(null);
+  const [error, setError] = useState(false)
 
   // Fetch product data based on the ID
   const fetchProduct = async () => {
@@ -13,6 +14,7 @@ const ProductDetails = () => {
       const data = await res.json();
       setProduct(data);
     } catch (error) {
+      setError(true);
       console.error("Error fetching product details:", error);
     }
   };
